@@ -1,7 +1,7 @@
 class Solution {
 public:
     bool subSetSum(vector<int> &nums, int sum, int n){
-        vector<vector<int>> dp(n+1, vector<int> (sum+1));
+        vector<vector<bool>> dp(n+1, vector<bool> (sum+1, false));
 //this is initialization of tabulation (DP)----
         for(int i=0; i<n+1; i++){
             for(int j=0; j<sum+1; j++){
