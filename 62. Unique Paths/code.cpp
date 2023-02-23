@@ -18,3 +18,27 @@ public:
         return answer(i,j,m,n,mat, dp);     
     }
 };
+
+
+//              //More optimized////////////////////
+
+class Solution {
+public:
+    int uniquePaths(int m, int n) {
+        //if a path exist, m-1 move to down will be taken and n-1 move to right will be taken 
+        //where m = no. of rows and n = no. of columns
+
+        //then total move = m-1+n-1 = m+n-2
+
+        int N = m+n-2;
+        int r = m-1; //we can take n-1 // Use NCr
+
+        long long res = 1;
+
+        for(int i=1; i<=r; i++){
+            res = res * (N-r+i)/i;
+        }
+        return (int)res;
+        
+    }
+};
